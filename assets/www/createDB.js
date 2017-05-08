@@ -12,7 +12,8 @@ function populateDB(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS ACCOUNTMOVEMENTS (id unique, sender_IBAN, sender_BIC, reciever_IBAN, reciever_BIC, date, time, amount)');
 
 
-    tx.executeSql('INSERT INTO USER (id, email, password) VALUES (1, "admin", "password")');
+  //  tx.executeSql('INSERT INTO USER (id, email, password) VALUES (1, "admin", "password")');
+    alert("in db function!");
 }
 
 function errorCB(err) {
