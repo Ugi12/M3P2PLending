@@ -1,3 +1,4 @@
+// HIER DATENSAETZE DIE IHR BRAUCHT ERZEUGEN. SIEHE BEISPIEL USER ADMIN
 function populateDB(tx) {
     tx.executeSql('DROP TABLE IF EXISTS USER');
     tx.executeSql('DROP TABLE IF EXISTS AD');
@@ -19,7 +20,7 @@ function errorCB(err) {
 }
 
 function successCB() {
-    alert("DB_Success! ADMIN: admin@gmail.com Password: admin");
+    alert("DB_Success!");
 }
 
 var database_name = "hcip2p";
@@ -29,4 +30,33 @@ var database_size = 200000;
 var db = window.openDatabase(database_name, database_version, database_displayname, database_size);
 
 db.transaction(populateDB, errorCB, successCB);
+localStorage.db = db;
 //db.changeVersion("1.0", "1.1");
+
+// ***************HOW TO USE GUIDE*************
+
+// SO HOLT IHR EUCH DIE DB AUS DEM LOKAL STORAGE UM QUERIES BEI ANDEREN SEITEN ZU REALISIEREN
+//var db = localStorage.db;
+
+// Query the database
+function queryDB(tx) {
+    tx.executeSql('SELECT * FROM USER', [], querySuccess, errorCB);
+}
+
+// Query the success callback
+function querySuccess(tx, results) {
+    var len = results.rows.length;
+    alert("USER table: " + len + " row(s) found.");
+    for (var i=0; i<len; i++){
+        alert("Row = " + i + " ID = " + results.rows.item(i).id + " E-Mail =  " + results.rows.item(i).email);
+    }
+    // this will be true since it was a select statement and so rowsAffected was 0
+    if (!results.rowsAffected) {
+        alert('No rows affected!');
+        return false;
+    }
+    // for an insert statement, this property will return the ID of the last inserted row
+    alert("Last inserted row ID = " + results.insertId);
+}
+
+db.transaction(queryDB, errorCB, querySuccess);
