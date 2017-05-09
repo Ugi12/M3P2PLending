@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../css/login.css">
         <link rel="stylesheet" type="text/css" href="../css/forderung.css">
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
+        <script type="text/javascript" src="../js/forderung_finance.js"></script>
         <script src="createDB.js"></script>
         <title>Welcome to P2P Lending</title>
     </head>
@@ -31,35 +33,35 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forderung <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="html/forderung_add.html">Erstellen</a></li>
-                                <li><a href="html/forderung_view">Liste Anzeigen</a></li>
+                                <li><a href="forderung_add.html">Erstellen</a></li>
+                                <li><a href="forderung_list_view.html">Liste Anzeigen</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="container">
+		<div class="container">
             <div class="row">
-                <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <div id="forderung" class="col-sm-6 col-md-4 col-md-offset-4">
                     <h1 class="text-center login-title">Forderung</h1>
                     <div class="account-wall">
                         <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                              alt="">
-                        <h1 class="middle">Hamed</h1>
+                        <h1 id="titels" class="middle">Hamed</h1>
                         <form class="form-signin">
                             <label>Kreditbetrag:</label>
-                            <p></p>
+                            <input id="betrag_view" style="background-color: #f7f7f7; border-color: #f7f7f7; box-shadow:  0px 0px 0px rgba(0, 0, 0, 0); margin: 0px 0px 20px 0px;" type="text" class="view_textbox form-control" readonly disabled>
                             <label>Laufzeit:</label>
-                            <p></p>
+                            <input id="laufzeit_view" style="background-color: #f7f7f7; border-color: #f7f7f7; box-shadow:  0px 0px 0px rgba(0, 0, 0, 0); margin: 0px 0px 20px 0px;" type="text" class="form-control" readonly disabled>
                             <label>User Rating:</label>
-                            <p></p>
+                            <input id="rating_view" style="background-color: #f7f7f7; border-color: #f7f7f7; box-shadow:  0px 0px 0px rgba(0, 0, 0, 0); margin: 0px 0px 20px 0px;" type="text" class="form-control" readonly disabled>
                             <label>Zinssatz:</label>
-                            <p></p>
+                            <input id="zins_view" style="background-color: #f7f7f7; border-color: #f7f7f7; box-shadow:  0px 0px 0px rgba(0, 0, 0, 0); margin: 0px 0px 20px 0px;" type="text" class="form-control" readonly disabled>
                             <label>Beschreibung:</label>
-                            <p></p>
-                            <button class="btn btn-lg btn-primary half" type="submit">Zurück</button>
-                            <button class="btn btn-lg btn-primary half" type="submit">Finanzieren</button>
+                            <textarea id="beschreibung_view" style="background-color: #f7f7f7; border-color: #f7f7f7; box-shadow:  0px 0px 0px rgba(0, 0, 0, 0); margin: 0px 0px 20px 0px;" class="form-control" rows="5" readonly disabled></textarea>
+                            <button id="back" class="btn btn-lg btn-primary half" type="button">Zurück</button>
+                            <button id="finance" class="btn btn-lg btn-primary half" type="submit">Finanzieren</button>
                         </form>
                     </div>
                 </div>
