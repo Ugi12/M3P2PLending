@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/login.css">
+        <link rel="stylesheet" type="text/css" href="../css/forderung.css">
+        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
+		<script type="text/javascript" src="../js/statistik.js"></script>
+        <title>Welcome to P2P Lending</title>
+    </head>
+    <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">P2P Lending</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li class="active">
+                        <a href="statistik.html">Statistik</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forderung <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="forderung_add.html">Erstellen</a></li>
+                            <li><a href="forderung_list_view.html">Liste Anzeigen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+        <div class="container">
+            <div class="row">
+				<div id="add_view" class="col-sm-6 col-md-4 col-md-offset-4">
+                    <h1 class="text-center login-title">Statistik</h1>
+                    <div class="account-wall">
+                        <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                             alt="">
+                        <h1 id="titels" class="middle">Bilanz</h1>
+                        <form class="form-signin">
+                            <label class="middle">Investments</label>
+                            <br>
+                            <label class="middle">Zinsen</label>
+                            <br>
+                            <button id="test" class="btn btn-lg btn-primary half" type="submit">Test</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
