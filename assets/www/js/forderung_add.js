@@ -1,5 +1,12 @@
 $(document).ready(function(){
 	
+	var titel;
+	var betrag;
+	var laufzeit;
+	var beschreibung;
+	var zins;
+	var userrating;
+
 	$("#add_view").hide();
 	
     $("#cancel").click(function(){
@@ -8,10 +15,10 @@ $(document).ready(function(){
     });
     $("#view").click(function(){
 		
-		var titel = $("#titel").val();
-		var betrag = $("#betrag").val();
-		var laufzeit = $("#laufzeit").val();
-		var beschreibung = $("#beschreibung").val();
+	 	titel = $("#titel").val();
+	 	betrag = $("#betrag").val();
+	 	laufzeit = $("#laufzeit").val();
+	 	beschreibung = $("#beschreibung").val();
 		
 		
 		if($("#titel").val()!="" && $("#betrag").val()!="" && $("#laufzeit").val()!="" && $("#beschreibung").val()!=""){
@@ -24,26 +31,28 @@ $(document).ready(function(){
 			$("#add_form").hide();
 			$("#add_view").show();
 		}
-
-		/*$("#inner").append(" <img class='profile-img' src='https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120' alt=''> "); 
-		$("#inner").append(" <h1 class='middle'>" + titel + "</h1> ");
-		$("#inner").append(" <form class='form-signin'> ");
-		$("#inner").append(" <label>Kreditbetrag:</label> ");
-		$("#inner").append(" <p> " + betrag + " </p> ");
-		$("#inner").append(" <label>Laufzeit:</label> ");
-		$("#inner").append(" <p> " + laufzeit + " </p> ");
-		$("#inner").append(" <label>Beschreibung:</label> ");
-		$("#inner").append(" <p> " + beschreibung + " </p> ");
-		$("#inner").append(" <button id='cancel' class='btn btn-lg btn-primary half' type='submit'>Abbrechen</button> ");
-		$("#inner").append(" <button id='save' class='btn btn-lg btn-primary half' type='submit'>speichern</button> ");
-		$("#inner").append(" </form> ");
-		
-		$("#add_form").hide();
-		$("#add_view").show();
-		*/
-		
     });
+
     $("#save").click(function(){
-		alert("Ihre Forderung wurde erfolgreich gespeichert.");
+
+    	function populateDB(tx){
+    		titel = $("#titel").val();
+		 	betrag = $("#betrag").val();
+		 	laufzeit = $("#laufzeit").val();
+		 	beschreibung = $("#beschreibung").val();
+
+		 	tx.executeSql('CREATE TABLE IF NOT EXISTS FORDERUNG (id unique autoincrement, TITEL, BETRAG, LAUFZEIT, BESCHREIBUNG, ZINSATZ, USERRATING)');
+
+		 	tx.executeSql('INSERT INTO USER (id, TITEL, BETRAG, LAUFZEIT, BESCHREIBUNG, ZINSATZ, USERRATING) VALUES (titel, betrag, laufzeit, beschreibung, zins, userrating)');
+    	}
+
+    	function errorCB(err) {
+		    alert("Error processing SQL: " + err.code);
+		}
+
+		function successCB() {
+		    alert("Ihre Forderung wurde erfolgreich gespeichert.");
+		}
+		
     });
 });
