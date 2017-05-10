@@ -63,5 +63,3 @@ function querySuccessforUGI(tx, results) {
 function UgiQuery(){
 db.transaction(queryDBforUGI, errorCB, querySuccessforUGI);
 }
-
-

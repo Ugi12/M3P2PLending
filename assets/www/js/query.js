@@ -1,6 +1,5 @@
 // ***************HOW TO USE GUIDE*************
-alert('in query.js!');
-var db = localStorage.db;
+alert('query.js loaded!');
 
 // Query the database
 function queryDB(tx) {
@@ -28,7 +27,8 @@ function errorCB(err) {
     alert("Error processing SQL: "+err.code);
 }
 
-// SO HOLT IHR EUCH DIE DB AUS DEM LOKAL STORAGE UM QUERIES BEI ANDEREN SEITEN ZU REALISIEREN
-
 // DB Funktion
+function MyQuery() {
+var db = localStorage.db;
 db.transaction(queryDB, errorCB, querySuccess);
+}
