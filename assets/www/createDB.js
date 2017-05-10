@@ -26,12 +26,13 @@ function successCB() {
 var database_name = "hcip2p";
 var database_version = "1.0";
 var database_displayname = "P2P Database";
-var database_size = 200000;
+var database_size = 100;
 var db = window.openDatabase(database_name, database_version, database_displayname, database_size);
 
 db.transaction(populateDB, errorCB, successCB);
 localStorage.db = db;
 //db.changeVersion("1.0", "1.1");
+
 
 // ***************HOW TO USE GUIDE*************
 
@@ -39,12 +40,12 @@ localStorage.db = db;
 //var db = localStorage.db;
 
 // Query the database
-function queryDB(tx) {
-    tx.executeSql('SELECT * FROM USER', [], querySuccess, errorCB);
+function queryDBforUGI(tx) {
+    tx.executeSql('SELECT * FROM USER', [], querySuccessforUGI, errorCB);
 }
 
 // Query the success callback
-function querySuccess(tx, results) {
+function querySuccessforUGI(tx, results) {
     var len = results.rows.length;
     alert("USER table: " + len + " row(s) found.");
     for (var i=0; i<len; i++){
@@ -59,4 +60,8 @@ function querySuccess(tx, results) {
     alert("Last inserted row ID = " + results.insertId);
 }
 
-db.transaction(queryDB, errorCB, querySuccess);
+function UgiQuery(){
+db.transaction(queryDBforUGI, errorCB, querySuccessforUGI);
+}
+
+
