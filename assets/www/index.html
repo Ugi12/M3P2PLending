@@ -29,10 +29,42 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script src="createDB.js"></script>
         <title>Welcome to P2P Lending</title>
     </head>
     <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">P2P Lending</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forderung <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="html/forderung_add.html">Erstellen</a></li>
+                            <li><a href="html/forderung_view.html">Liste Anzeigen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-4 col-md-offset-4">
@@ -43,15 +75,10 @@
                     <form class="form-signin">
                         <input type="text" class="form-control" placeholder="Email" required autofocus>
                         <input type="password" class="form-control" placeholder="Password" required>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">
-                            Sign in</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                     </form>
                 </div>
-                <form class="form-signin">
-                    <button type="button" class="btn btn-lg btn-primary btn-block ">Create an account</button>
-                </form>
-
-               <!-- <a href="#" class="text-center new-account">Create an account </a> -->
+                <a href="#" class="text-center new-account">Create an account </a>
             </div>
         </div>
     </div>
