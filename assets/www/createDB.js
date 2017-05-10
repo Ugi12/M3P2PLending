@@ -6,11 +6,11 @@ function populateDB(tx) {
     tx.executeSql('DROP TABLE IF EXISTS BANKACCOUNT');
     tx.executeSql('DROP TABLE IF EXISTS ACCOUNTMOVEMENTS');
 	
-    tx.executeSql('CREATE TABLE IF NOT EXISTS USER (id unique, firstname, lastname, email, tel, img, password, IBAN, BIC)');
-	tx.executeSql('CREATE TABLE IF NOT EXISTS AD (id unique, status, amount, runningtime, creator_user_id, investor_user_id, discription, investment_date)');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS REMEMBERED (id unique, user_id, anzeige_id)');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS BANKACCOUNT (id unique, IBAN, BIC, balance)');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS ACCOUNTMOVEMENTS (id unique, sender_IBAN, sender_BIC, reciever_IBAN, reciever_BIC, date, time, amount)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS USER (id unique autoincrement, firstname, lastname, email, tel, img, password, IBAN, BIC)');
+	tx.executeSql('CREATE TABLE IF NOT EXISTS AD (id unique autoincrement, status, title, amount, runningtime, creator_user_id, investor_user_id, discription, investment_date)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS REMEMBERED (id unique autoincrement, user_id, anzeige_id)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS BANKACCOUNT (id unique autoincrement, IBAN, BIC, balance)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS ACCOUNTMOVEMENTS (id unique autoincrement, sender_IBAN, sender_BIC, reciever_IBAN, reciever_BIC, date, time, amount)');
 
     tx.executeSql('INSERT INTO USER (id, firstname, lastname, email, tel, img, password, IBAN, BIC) VALUES (1, "Admin", "HCI", "admin@gmail.com", "06642356724", "", "admin", "GEORG010101", "")');
 }
@@ -26,12 +26,13 @@ function successCB() {
 var database_name = "hcip2p";
 var database_version = "1.0";
 var database_displayname = "P2P Database";
-var database_size = 200000;
+var database_size = 100;
 var db = window.openDatabase(database_name, database_version, database_displayname, database_size);
 
 db.transaction(populateDB, errorCB, successCB);
 localStorage.db = db;
 //db.changeVersion("1.0", "1.1");
+
 
 // ***************HOW TO USE GUIDE*************
 
@@ -39,12 +40,12 @@ localStorage.db = db;
 //var db = localStorage.db;
 
 // Query the database
-function queryDB(tx) {
-    tx.executeSql('SELECT * FROM USER', [], querySuccess, errorCB);
+function queryDBforUGI(tx) {
+    tx.executeSql('SELECT * FROM USER', [], querySuccessforUGI, errorCB);
 }
 
 // Query the success callback
-function querySuccess(tx, results) {
+function querySuccessforUGI(tx, results) {
     var len = results.rows.length;
     alert("USER table: " + len + " row(s) found.");
     for (var i=0; i<len; i++){
@@ -59,4 +60,6 @@ function querySuccess(tx, results) {
     alert("Last inserted row ID = " + results.insertId);
 }
 
-db.transaction(queryDB, errorCB, querySuccess);
+function UgiQuery(){
+db.transaction(queryDBforUGI, errorCB, querySuccessforUGI);
+}
