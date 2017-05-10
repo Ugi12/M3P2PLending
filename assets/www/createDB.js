@@ -6,11 +6,11 @@ function populateDB(tx) {
     tx.executeSql('DROP TABLE IF EXISTS BANKACCOUNT');
     tx.executeSql('DROP TABLE IF EXISTS ACCOUNTMOVEMENTS');
 	
-    tx.executeSql('CREATE TABLE IF NOT EXISTS USER (id unique, firstname, lastname, email, tel, img, password, IBAN, BIC)');
-	tx.executeSql('CREATE TABLE IF NOT EXISTS AD (id unique, status, amount, runningtime, creator_user_id, investor_user_id, discription, investment_date)');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS REMEMBERED (id unique, user_id, anzeige_id)');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS BANKACCOUNT (id unique, IBAN, BIC, balance)');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS ACCOUNTMOVEMENTS (id unique, sender_IBAN, sender_BIC, reciever_IBAN, reciever_BIC, date, time, amount)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS USER (id unique autoincrement, firstname, lastname, email, tel, img, password, IBAN, BIC)');
+	tx.executeSql('CREATE TABLE IF NOT EXISTS AD (id unique autoincrement, status, title, amount, runningtime, creator_user_id, investor_user_id, discription, investment_date)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS REMEMBERED (id unique autoincrement, user_id, anzeige_id)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS BANKACCOUNT (id unique autoincrement, IBAN, BIC, balance)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS ACCOUNTMOVEMENTS (id unique autoincrement, sender_IBAN, sender_BIC, reciever_IBAN, reciever_BIC, date, time, amount)');
 
     tx.executeSql('INSERT INTO USER (id, firstname, lastname, email, tel, img, password, IBAN, BIC) VALUES (1, "Admin", "HCI", "admin@gmail.com", "06642356724", "", "admin", "GEORG010101", "")');
 }

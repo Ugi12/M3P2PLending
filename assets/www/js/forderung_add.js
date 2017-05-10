@@ -34,16 +34,19 @@ $(document).ready(function(){
     });
 
     $("#save").click(function(){
+        var db = localStorage.db;
+        db.transaction(queryDB, errorCB, successCB);
 
-    	function populateDB(tx){
+    	function queryDB(tx){
     		titel = $("#titel").val();
 		 	betrag = $("#betrag").val();
 		 	laufzeit = $("#laufzeit").val();
 		 	beschreibung = $("#beschreibung").val();
 
-		 	tx.executeSql('CREATE TABLE IF NOT EXISTS FORDERUNG (id unique autoincrement, TITEL, BETRAG, LAUFZEIT, BESCHREIBUNG, ZINSATZ, USERRATING)');
+		 //	tx.executeSql('CREATE TABLE IF NOT EXISTS FORDERUNG (id unique autoincrement, TITEL, BETRAG, LAUFZEIT, BESCHREIBUNG, ZINSATZ, USERRATING)');
+        	tx.executeSql('INSERT INTO AD (id, status, title, amount, runningtime, creator_user_id, investor_user_id, discription, investment_date) VALUES ("", "", "' + title + '", "", "", "", "", "", "")');
 
-		 	tx.executeSql('INSERT INTO USER (id, TITEL, BETRAG, LAUFZEIT, BESCHREIBUNG, ZINSATZ, USERRATING) VALUES (titel, betrag, laufzeit, beschreibung, zins, userrating)');
+		// 	tx.executeSql('INSERT INTO USER (id, TITEL, BETRAG, LAUFZEIT, BESCHREIBUNG, ZINSATZ, USERRATING) VALUES (titel, betrag, laufzeit, beschreibung, zins, userrating)');
     	}
 
     	function errorCB(err) {
