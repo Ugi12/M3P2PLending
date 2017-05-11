@@ -12,7 +12,7 @@ create table users(
 	user_email varchar(30) not null, 
 	user_enabled boolean not null,
 	user_creditscore double,
-	user_comment varchar(600),
+	user_aboutme varchar(600),
 	user_tel varchar(30),
 	user_img varchar(120),
 	user_iban varchar(30)
