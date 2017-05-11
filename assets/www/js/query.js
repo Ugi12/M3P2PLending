@@ -1,3 +1,7 @@
+// THIS IS NOT USED ANYMORE
+// WE ARE USING NOT MYSQL
+
+
 // ***************HOW TO USE GUIDE*************
 alert('query.js loaded!');
 
