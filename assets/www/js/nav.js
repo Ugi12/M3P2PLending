@@ -37,9 +37,8 @@ document.getElementById("nav").innerHTML = (
  '           <!-- Collect the nav links, forms, and other content for toggling -->' +
   '           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">' +
    '              <ul class="nav navbar-nav">' +
-    '                 <li><a href="statistik.html">Bilanz</a></li>' +
     '                 <li><a href="Profile.html">Mein Profil</a></li>' +
-    '                 <li><a href="HelpNabout.html">&Uuml;ber uns</a></li>' +
+    '                 <li><a href="statistik.html">Bilanz</a></li>' +
     '                 <li class="dropdown">' +
     '                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forderung <span class="caret"></span></a>' +
     '                     <ul class="dropdown-menu">' +
@@ -47,6 +46,7 @@ document.getElementById("nav").innerHTML = (
      '                        <li><a href="forderung_view.html">Liste Anzeigen</a></li>' +
      '                    </ul>' +
       '               </li>' +
+    '                 <li><a href="HelpNabout.html">&Uuml;ber uns</a></li>' +
       '           </ul>' +
       '       </div><!-- /.navbar-collapse -->' +
      '    </div><!-- /.container-fluid -->' +
