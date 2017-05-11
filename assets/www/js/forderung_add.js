@@ -7,12 +7,18 @@ $(document).ready(function(){
 	var zins;
 	var userrating;
 
+
+    $("#form_add").submit(function(e) {
+        e.preventDefault();
+    });
+
 	$("#add_view").hide();
 	
     $("#cancel").click(function(){
 		$("#add_form").show();
 		$("#add_view").hide();
     });
+
     $("#view").click(function(){
 		
 	 	titel = $("#titel").val();
@@ -27,15 +33,13 @@ $(document).ready(function(){
 			$("#laufzeit_view").val(laufzeit);
 			$("#beschreibung_view").val(beschreibung);
 			$("#rating_view").val(betrag);
-			$("#zins_view").val(betrag);
+			$("#zins_view").val("4,5%");
 			$("#add_form").hide();
 			$("#add_view").show();
 		}
     });
 
     $("#save").click(function(){
-        var db = localStorage.db;
-        db.transaction(queryDB, errorCB, successCB);
 
     	function queryDB(tx){
     		titel = $("#titel").val();
@@ -49,18 +53,12 @@ $(document).ready(function(){
                     "sql3173783",
                     "NDQRtTqcvt",
                     "sql3173783",
-                    "(INSERT INTO AD (id, status, title, amount, runningtime, creator_user_id, investor_user_id, discription, investment_date) VALUES ()"
+                    "(INSERT INTO AD (ad_id, ad_creator_id, ad_title, ad_amount, ad_rate, ad_description, ad_runningtime, ad_creation_date, ad_status, ad_investor_id, ad_investment_date) VALUES (" +  + ", " +  + ", " +  + ", " +  + ", " +  + ",)"
                     )
 
     	}
-
-    	function errorCB(err) {
-		    alert("Error processing SQL: " + err.code);
-		}
-
-		function successCB() {
-		    alert("Ihre Forderung wurde erfolgreich gespeichert.");
-		}
 		
     });
+
+
 });
