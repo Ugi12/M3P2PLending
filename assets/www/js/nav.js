@@ -37,10 +37,9 @@ document.getElementById("nav").innerHTML = (
  '           <!-- Collect the nav links, forms, and other content for toggling -->' +
   '           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">' +
    '              <ul class="nav navbar-nav">' +
-   '                  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>' +
     '                 <li><a href="statistik.html">Bilanz</a></li>' +
-    '                 <li><a href="Profile.html">Profil Anzeigen</a></li>' +
-    '                 <li><a href="HelpNabout.html">Über uns</a></li>' +
+    '                 <li><a href="Profile.html">Mein Profil</a></li>' +
+    '                 <li><a href="HelpNabout.html">&Uuml;ber uns</a></li>' +
     '                 <li class="dropdown">' +
     '                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forderung <span class="caret"></span></a>' +
     '                     <ul class="dropdown-menu">' +
