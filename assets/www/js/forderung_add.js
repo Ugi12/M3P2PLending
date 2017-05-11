@@ -41,22 +41,24 @@ $(document).ready(function(){
 
     $("#save").click(function(){
 
-    	function queryDB(tx){
     		titel = $("#titel").val();
 		 	betrag = $("#betrag").val();
 		 	laufzeit = $("#laufzeit").val();
 		 	beschreibung = $("#beschreibung").val();
 
-
             MySql.Execute(
-                    "sql3.freemysqlhosting.net",
-                    "sql3173783",
-                    "NDQRtTqcvt",
-                    "sql3173783",
-                    "(INSERT INTO AD (ad_id, ad_creator_id, ad_title, ad_amount, ad_rate, ad_description, ad_runningtime, ad_creation_date, ad_status, ad_investor_id, ad_investment_date) VALUES (" +  + ", " +  + ", " +  + ", " +  + ", " +  + ",)"
-                    )
-
-    	}
+                "sql3.freemysqlhosting.net",
+                "sql3173783",
+                "NDQRtTqcvt",
+                "sql3173783",
+                "insert into ads values(null, 3,'Studium', 5000, 0, 4.5, 'Ich möchte Studieren!', 72, '2017-05-08 13:10:02.047', 0, null, null);",
+                function (data) {
+                    for (var key in data) {
+                      if (data.hasOwnProperty(key)) {
+                        alert(key + " -> " + data[key]);
+                      }
+                    }
+            });
 		
     });
 
