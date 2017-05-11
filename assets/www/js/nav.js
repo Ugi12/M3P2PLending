@@ -43,7 +43,7 @@ document.getElementById("nav").innerHTML = (
     '                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forderung <span class="caret"></span></a>' +
     '                     <ul class="dropdown-menu">' +
     '                         <li><a href="forderung_add.html">Erstellen</a></li>' +
-     '                        <li><a href="forderung_view.html">Liste Anzeigen</a></li>' +
+     '                        <li><a href="forderung_list_view.html">Liste Anzeigen</a></li>' +
      '                    </ul>' +
       '               </li>' +
     '                 <li><a href="HelpNabout.html">&Uuml;ber uns</a></li>' +
