@@ -43,10 +43,15 @@ $(document).ready(function(){
 		 	laufzeit = $("#laufzeit").val();
 		 	beschreibung = $("#beschreibung").val();
 
-		 //	tx.executeSql('CREATE TABLE IF NOT EXISTS FORDERUNG (id unique autoincrement, TITEL, BETRAG, LAUFZEIT, BESCHREIBUNG, ZINSATZ, USERRATING)');
-        	tx.executeSql('INSERT INTO AD (id, status, title, amount, runningtime, creator_user_id, investor_user_id, discription, investment_date) VALUES ("", "", "' + title + '", "", "", "", "", "", "")');
 
-		// 	tx.executeSql('INSERT INTO USER (id, TITEL, BETRAG, LAUFZEIT, BESCHREIBUNG, ZINSATZ, USERRATING) VALUES (titel, betrag, laufzeit, beschreibung, zins, userrating)');
+            MySql.Execute(
+                    "sql3.freemysqlhosting.net",
+                    "sql3173783",
+                    "NDQRtTqcvt",
+                    "sql3173783",
+                    "(INSERT INTO AD (id, status, title, amount, runningtime, creator_user_id, investor_user_id, discription, investment_date) VALUES ()"
+                    )
+
     	}
 
     	function errorCB(err) {
