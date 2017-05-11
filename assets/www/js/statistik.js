@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var myID = 2;
+    var myID = 1;
     MySql.Execute(
         "sql3.freemysqlhosting.net",
         "sql3173783",
@@ -38,14 +38,14 @@ $(document).ready(function(){
                         gesamt_zinskosten += zinskosten;
                         htmlText = '<div class="account-wall-2">';
                         htmlText += '    <h3 class="ad_title">'+ title +'</h3>';
-                        htmlText += '    <label class="right">Status: </label>';
-                        htmlText += '    <label class="ad_status">Abgeschlossen</label>';
+                        htmlText += '    <label>Status: </label>';
+                        htmlText += '    <label>Abgeschlossen</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Geliehener Betrag: </label>';
-                        htmlText += '    <label class="ad_amount">'+ amount +' Euro</label>';
+                        htmlText += '    <label>Geliehener Betrag: </label>';
+                        htmlText += '    <label>'+ amount +' Euro</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Zinskosten: </label>';
-                        htmlText += '    <label class="ad_zinskosten">'+ zinskosten +' Euro</label>';
+                        htmlText += '    <label>Zinskosten: </label>';
+                        htmlText += '    <label style="color:red;">'+ zinskosten +' Euro</label>';
                         htmlText += '</div>';
                         htmlText += document.getElementById("pro_ad").innerHTML;
                         document.getElementById("pro_ad").innerHTML = htmlText;
@@ -56,14 +56,14 @@ $(document).ready(function(){
                         gesamt_profit += profit;
                         htmlText = '<div class="account-wall-2">';
                         htmlText += '    <h3 class="ad_title">'+ title +'</h3>';
-                        htmlText += '    <label class="right">Status: </label>';
-                        htmlText += '    <label class="ad_status">Abgeschlossen</label>';
+                        htmlText += '    <label>Status: </label>';
+                        htmlText += '    <label>Abgeschlossen</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Investierter Betrag: </label>';
-                        htmlText += '    <label class="ad_amount">'+ amount +' Euro</label>';
+                        htmlText += '    <label>Investierter Betrag: </label>';
+                        htmlText += '    <label>'+ amount +' Euro</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Profit: </label>';
-                        htmlText += '    <label class="ad_zinskosten">'+ profit +' Euro</label>';
+                        htmlText += '    <label>Profit: </label>';
+                        htmlText += '    <label style="color:green;">'+ profit +' Euro</label>';
                         htmlText += '</div>';
                         htmlText += document.getElementById("pro_ad").innerHTML;
                         document.getElementById("pro_ad").innerHTML = htmlText;
@@ -76,17 +76,17 @@ $(document).ready(function(){
                         gesamt_zukunfts_zinskosten += zinskosten;
                         htmlText = '<div class="account-wall-2">';
                         htmlText += '    <h3 class="ad_title">'+ title +'</h3>';
-                        htmlText += '    <label class="right">Status: L&auml;uft noch </label>';
-                        htmlText += '    <label class="ad_status">'+ 656 +' Monat(e)!</label>';
+                        htmlText += '    <label>Status: L&auml;uft noch </label>';
+                        htmlText += '    <label>'+ 656 +' Monat(e)!</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Geliehener Betrag: </label>';
-                        htmlText += '    <label class="ad_amount">'+ amount +' Euro</label>';
+                        htmlText += '    <label>Geliehener Betrag: </label>';
+                        htmlText += '    <label>'+ amount +' Euro</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Derzeitige Zinskosten: </label>';
-                        htmlText += '    <label class="ad_zinskosten">'+ zinskosten +' Euro</label>';
+                        htmlText += '    <label>Derzeitige Zinskosten: </label>';
+                        htmlText += '    <label style="color:red;">'+ zinskosten +' Euro</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Zuk&uuml;nftige Zinskosten: </label>';
-                        htmlText += '    <label class="ad_zinskosten">'+ zinskosten +' Euro</label>';
+                        htmlText += '    <label>Zuk&uuml;nftige Zinskosten: </label>';
+                        htmlText += '    <label style="color:red;">'+ zinskosten +' Euro</label>';
                         htmlText += '</div>';
                         htmlText += document.getElementById("pro_ad").innerHTML;
                         document.getElementById("pro_ad").innerHTML = htmlText;
@@ -97,45 +97,52 @@ $(document).ready(function(){
                         gesamt_zukunfts_profit += profit;
                         htmlText = '<div class="account-wall-2">';
                         htmlText += '    <h3 class="ad_title">'+ title +'</h3>';
-                        htmlText += '    <label class="right">Status: L&auml;uft noch </label>';
-                        htmlText += '    <label class="ad_status">'+ 656 +' Monat(e)!</label>';
+                        htmlText += '    <label>Status: L&auml;uft noch </label>';
+                        htmlText += '    <label>'+ 656 +' Monat(e)!</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Investierter Betrag: </label>';
-                        htmlText += '    <label class="ad_amount">'+ amount +' Euro</label>';
+                        htmlText += '    <label>Investierter Betrag: </label>';
+                        htmlText += '    <label>'+ amount +' Euro</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Derzeitige Profit: </label>';
-                        htmlText += '    <label class="ad_zinskosten">'+ profit +' Euro</label>';
+                        htmlText += '    <label>Derzeitige Profit: </label>';
+                        htmlText += '    <label style="color:green;">'+ profit +' Euro</label>';
                         htmlText += '    <br>';
-                        htmlText += '    <label class="right">Zuk&uuml;nftige Profit: </label>';
-                        htmlText += '    <label class="ad_zinskosten">'+ profit +' Euro</label>';
+                        htmlText += '    <label>Zuk&uuml;nftige Profit: </label>';
+                        htmlText += '    <label style="color:green;">'+ profit +' Euro</label>';
                         htmlText += '</div>';
                         htmlText += document.getElementById("pro_ad").innerHTML;
                         document.getElementById("pro_ad").innerHTML = htmlText;
                     }
                 }
             });
+            var fontcolor = "";
+            if( (gesamt_profit - gesamt_zinskosten)<0 ){fontcolor = 'style="color:red;"';}
+            else{fontcolor = 'style="color:green;"';}
+            var fontcolor2 = "";
+            if( (gesamt_zukunfts_profit - gesamt_zukunfts_zinskosten)<0 ){fontcolor2 = 'style="color:red;"';}
+            else{fontcolor2 = 'style="color:green;"';}
+
             html_gesmat_text = document.getElementById("gesamt").innerHTML;
             html_gesmat_text +='                    <div class="account-wall-2">';
-            html_gesmat_text +='                        <h3 id="titel1" class="left">Derzeitig</h3>';
-            html_gesmat_text +='                        <label class="left">Gewinnbetrag: </label>';
-            html_gesmat_text +='                        <label class="left">'+ gesamt_profit +' Euro</label>';
+            html_gesmat_text +='                        <h3 id="titel1" class="ad_title">Gesmat derzeitig</h3>';
+            html_gesmat_text +='                        <label>Gewinnbetrag: </label>';
+            html_gesmat_text +='                        <label style="color:green;">'+ gesamt_profit +' Euro</label>';
             html_gesmat_text +='                        <br>';
-            html_gesmat_text +='                        <label class="left">Zinskosten: </label>';
-            html_gesmat_text +='                        <label class="left">'+ gesamt_zinskosten +' Euro</label>';
+            html_gesmat_text +='                        <label>Zinskosten: </label>';
+            html_gesmat_text +='                        <label style="color:red;">'+ gesamt_zinskosten +' Euro</label>';
             html_gesmat_text +='                        <br>';
-            html_gesmat_text +='                        <label class="left">Bilanz: </label>';
-            html_gesmat_text +='                        <label class="left">'+ (gesamt_profit - gesamt_zinskosten)+' Euro</label>';
+            html_gesmat_text +='                        <label>Bilanz: </label>';
+            html_gesmat_text +='                        <label '+ fontcolor +'>'+ (gesamt_profit - gesamt_zinskosten)+' Euro</label>';
             html_gesmat_text +='                    </div>';
             html_gesmat_text +='                    <div class="account-wall-2">';
-            html_gesmat_text +='                        <h3 id="titel2" class="right">Bevorstehend</h3>';
-            html_gesmat_text +='                        <label class="right">Gewinnbetrag: </label>';
-            html_gesmat_text +='                        <label class="left">'+ gesamt_zukunfts_profit +' Euro</label>';
+            html_gesmat_text +='                        <h3 id="titel2" class="ad_title">Gesamt bevorstehend</h3>';
+            html_gesmat_text +='                        <label>Gewinnbetrag: </label>';
+            html_gesmat_text +='                        <label style="color:green;">'+ gesamt_zukunfts_profit +' Euro</label>';
             html_gesmat_text +='                        <br>';
-            html_gesmat_text +='                        <label class="right">Zinskosten: </label>';
-            html_gesmat_text +='                        <label class="left">'+ gesamt_zukunfts_zinskosten +' Euro</label>';
+            html_gesmat_text +='                        <label>Zinskosten: </label>';
+            html_gesmat_text +='                        <label style="color:red;">'+ gesamt_zukunfts_zinskosten +' Euro</label>';
             html_gesmat_text +='                        <br>';
-            html_gesmat_text +='                        <label class="right">Bilanz:</label>';
-            html_gesmat_text +='                        <label class="left">'+ (gesamt_zukunfts_profit - gesamt_zukunfts_zinskosten)+' Euro</label>';
+            html_gesmat_text +='                        <label>Bilanz:</label>';
+            html_gesmat_text +='                        <label '+ fontcolor2 +'>'+ (gesamt_zukunfts_profit - gesamt_zukunfts_zinskosten)+' Euro</label>';
             html_gesmat_text +='                    </div>';
             document.getElementById("gesamt").innerHTML = html_gesmat_text;
     });
