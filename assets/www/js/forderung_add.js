@@ -58,8 +58,8 @@ $(document).ready(function(){
                         alert(key + " -> " + data[key]);
                       }
                     }
-            });
-		
+                }
+            );
     });
 
 
