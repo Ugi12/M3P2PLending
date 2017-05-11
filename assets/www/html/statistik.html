@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../css/forderung.css">
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
@@ -14,22 +15,78 @@
         <p id="nav"></p>
         <div class="container">
             <div class="row">
-				<div id="add_view" class="col-sm-6 col-md-4 col-md-offset-4">
-                    <h1 class="text-center login-title">Statistik</h1>
+                <div id="gesamt" class="col-sm-6 col-md-4 col-md-offset-4">
+                    <h1 id="titel" class="middle">Meine Bilanz</h1>
                     <div class="account-wall">
-                        <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                             alt="">
-                        <h1 id="titels" class="middle">Bilanz</h1>
-                        <form class="form-signin">
-                            <label class="middle">Investments</label>
-                            <br>
-                            <label class="middle">Zinsen</label>
-                            <br>
-                            <button id="test" class="btn btn-lg btn-primary half" type="button">Test</button>
-                        </form>
+                        <h3 id="titel1" class="left">Derzeitig</h3>
+                        <label class="left">Gewinnbetrag:</label>
+                        <br>
+                        <label class="left">Zinskosten:</label>
+                        <br>
+                        <label class="left">Bilanz:</label>
+                    </div>
+                    <div class="account-wall">
+                        <h3 id="titel2" class="right">Bevorstehend</h3>
+                        <label class="right">Gewinnbetrag:</label>
+                        <br>
+                        <label class="right">Zinskosten:</label>
+                        <br>
+                        <label class="right">Bilanz:</label>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div id="pro_ad" class="col-sm-6 col-md-4 col-md-offset-4">
+                    <div class="account-wall">
+                        <h3 class="ad_title">Haus Bauen</h3>
+                        <label class="right">Status: Läuft noch </label>
+                        <label class="ad_status">x Monate!</label>
+                        <br>
+                        <label class="right">Derzeitiger Profit: </label>
+                        <label class="ad_profit">1000</label>
+                        <br>
+                        <label class="right">Zukünftiger Profit: </label>
+                        <label class="ad_future_profit">z</label>
+                        <br>
+                        <label class="right">Profit pro Monat: </label>
+                        <label class="ad_monthly_profit">x*y</label>
+                    </div>
+                    <div class="account-wall">
+                        <h3 class="ad_title">Haus Bauen</h3>
+                        <label class="right">Status: Läuft noch </label>
+                        <label class="ad_status">x Monate!</label>
+                        <br>
+                        <label class="right">Derzeitige Zinskosten: </label>
+                        <label class="ad_profit">1000</label>
+                        <br>
+                        <label class="right">Zukünftiger Zinskosten: </label>
+                        <label class="ad_future_profit">z</label>
+                        <br>
+                        <label class="right">Zinskosten pro Monat: </label>
+                        <label class="ad_monthly_profit">x*y</label>
+                    </div>
+                    <div class="account-wall">
+                        <h3 class="ad_title">Haus Bauen</h3>
+                        <label class="right">Status: </label>
+                        <label class="ad_status">Abgeschlossen</label>
+                        <br>
+                        <label class="right">Profit: </label>
+                        <label class="ad_profit">1000</label>
+                    </div>
+                    <div class="account-wall">
+                        <h3 class="ad_title">Haus Bauen</h3>
+                        <label class="right">Status: </label>
+                        <label class="ad_status">Abgeschlossen</label>
+                        <br>
+                        <label class="right">Zinskosten: </label>
+                        <label class="ad_zinskosten">500</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>

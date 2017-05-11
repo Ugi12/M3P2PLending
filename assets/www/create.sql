@@ -12,6 +12,7 @@ create table users(
 	user_email varchar(30) not null, 
 	user_enabled boolean not null,
 	user_creditscore double,
+	user_comment varchar(600),
 	user_tel varchar(30),
 	user_img varchar(120),
 	user_iban varchar(30)
@@ -24,7 +25,7 @@ create table ads(
 	ad_amount double not null,
 	ad_rate double not null,
 	ad_description varchar (600) not null,
-	ad_runningtime varchar (30) not null,
+	ad_runningtime integer not null,
 	ad_creation_date timestamp not null,
 	ad_status integer not null,
 	ad_investor_id integer,
