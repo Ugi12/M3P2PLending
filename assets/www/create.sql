@@ -27,10 +27,10 @@ create table ads(
 	ad_rate double not null,
 	ad_description varchar (600) not null,
 	ad_runningtime integer not null,
-	ad_creation_date timestamp not null,
+	ad_creation_date date not null,
 	ad_status integer not null,
 	ad_investor_id integer,
-	ad_investment_date timestamp,
+	ad_investment_date date,
 	
 	constraint fk_ad_creator_id foreign key(ad_creator_id) references users(user_id) on delete cascade,
 	constraint fk_ad_investor_id foreign key(ad_investor_id) references users(user_id) on delete cascade
@@ -59,5 +59,5 @@ create table accountmovements(
 	accountmovement_sender_bic varchar(30) not null,
 	accountmovement_reciever_bic varchar(30) not null,
 	accountmovement_amount double not null,
-	accountmovement_date timestamp not null
+	accountmovement_date date not null
 );

@@ -1,4 +1,11 @@
 $(document).ready(function(){
+
+    function computeRateValue(xrate, xamount, xrunningtime){
+    var x = 0;
+    x = (xamount * xrate * xrunningtime) / 1200;
+    return x;
+    }
+
     var myID = 1;
     MySql.Execute(
         "sql3.freemysqlhosting.net",
@@ -22,7 +29,7 @@ $(document).ready(function(){
                 var status = entry.ad_status;
                 var creator = entry.ad_creator_id;
                 var investor = entry.ad_investor_id;
-               // var investment_date = new Date(Date.parse(entry.ad_investment_date.replace('-','/','g')));
+                var investment_date = new Date(Date.parse(entry.ad_investment_date.replace('-','/','g')));
                 var heute = new Date();
 
                 var htmlText = "";
@@ -34,7 +41,7 @@ $(document).ready(function(){
                 if (status == 2){
                     // Abgeschlossene Forderungen
                     if(creator == myID){
-                        zinskosten = amount * (rate / 100);
+                        zinskosten = computeRateValue(rate, amount, runningtime);
                         gesamt_zinskosten += zinskosten;
                         htmlText = '<div class="panel panel-primary">';
                         htmlText += '    <div class="panel-heading">';
