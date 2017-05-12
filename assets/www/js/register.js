@@ -13,45 +13,28 @@ function register() {
         return false;
     }
 
-    var exist = false;
-
-    MySql.Execute(
-    "sql3.freemysqlhosting.net",
-    "sql3173783",
-    "NDQRtTqcvt",
-    "sql3173783",
-    "SELECT * FROM users WHERE user_email = '" + email + "'",
-    function (data1) {
-        if (data1.Result.length !== 0) {
-            alert("Email existiert schon");
-            exist = true;
-        }
-});
-
-    if (exist === true) {
+    if(checkIfEmailExist()) {
         return false;
     }
 
-    var userid = 0;
+    var userid = createNewUserId();
 
-    MySql.Execute(
-    "sql3.freemysqlhosting.net",
-    "sql3173783",
-    "NDQRtTqcvt",
-    "sql3173783",
-    "SELECT Count(*) FROM users",
-    function (data2) {
-        userid = data2.Result[0]["Count(*)"];
-});
+    if (!telephone) {
+        telephone = null;
+    }
+    if (!iban) {
+        iban = null;
+    }
 
-//Später
 //    MySql.Execute(
 //    "sql3.freemysqlhosting.net",
 //    "sql3173783",
 //    "NDQRtTqcvt",
 //    "sql3173783",
-//    "INSERT INTO users VALUES(" + userid + ", '" + vorname + "', '"+ nachname + "', '" + password + "', '" + email +  "', ");
-//    );
+//    "INSERT INTO users VALUES(" + userid + ", '" + vorname + "', '"+ nachname + "', '" + password + "', '" + email +  "', true, null, '"+ telephone + "', null, " + iban  +"');",
+//    function(data3) {
+//        console.log(data3);
+//    });
     return false;
 };
 
