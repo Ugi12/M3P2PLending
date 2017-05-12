@@ -9,6 +9,7 @@ $(document).ready(function(){
         var password = $("#password").val();
         var pw  = false;
         var eml = false;
+        var user_id = null;
 
         //SQL Query
         MySql.Execute(
@@ -19,23 +20,15 @@ $(document).ready(function(){
             "sql3173783",
             "select * from users",
             function (data) {
-
-                var tmp = data.Result[0];
-
                 //check input data is correct
-                for (var key in tmp) {
-                    if (tmp.hasOwnProperty(key) ) {
-                        if(password === tmp[key]){
-                            pw = true;
-                        }
+                data.Result.forEach(function(entry) {
+                    if(entry.user_password === password && entry.user_email === email){
+                        pw = true;
+                        eml = true;
+                        user_id = entry.user_id;
                     }
+                });
 
-                    if (tmp.hasOwnProperty(key) ) {
-                        if(email === tmp[key]){
-                            eml = true;
-                        }
-                    }
-                }
             // after success input load profile page
             if(pw === true && eml === true){
                 window.document.location.href = 'html/Profile.html';
@@ -44,6 +37,7 @@ $(document).ready(function(){
                 window.document.location.href = 'index.html';
 
             }
+            localStorage.user = user_id;
         });
 
 

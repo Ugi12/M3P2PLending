@@ -24,7 +24,7 @@ $(document).ready(function(){
      return Ergebnis;
     }
 
-    var myID = 2;
+    var myID = localStorage.user;
     MySql.Execute(
         "sql3.freemysqlhosting.net",
         "sql3173783",
