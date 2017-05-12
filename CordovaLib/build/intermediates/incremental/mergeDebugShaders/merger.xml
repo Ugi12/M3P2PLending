@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Tina\Google Drive\UNI\SS17\HCI\M3\M3P2PLending\CordovaLib\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Tina\Google Drive\UNI\SS17\HCI\M3\M3P2PLending\CordovaLib\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/uguryuruk/Documents/UNI/5. SS17/HCI/Meilensteine_Gruppen/Meilenstein3/P2PLending/platforms/android/CordovaLib/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/uguryuruk/Documents/UNI/5. SS17/HCI/Meilensteine_Gruppen/Meilenstein3/P2PLending/platforms/android/CordovaLib/src/debug/shaders"/></dataSet></merger>
