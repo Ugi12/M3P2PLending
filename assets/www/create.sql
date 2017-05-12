@@ -14,7 +14,8 @@ create table users(
 	user_aboutme varchar(600),
 	user_tel varchar(30),
 	user_img varchar(120),
-	user_iban varchar(30)
+	user_iban varchar(30),
+    user_bic varchar(30)
 );
 
 create table ads(
@@ -47,6 +48,7 @@ create table favs(
 create table bankaccounts(
 	bankaccount_id integer primary key not null auto_increment,
 	bankaccount_iban varchar(30) unique not null,
+	bankaccount_bic varchar(30) not null,
 	bankaccount_balance double not null
 );	
 
@@ -54,6 +56,8 @@ create table accountmovements(
 	accountmovement_id integer primary key not null auto_increment,
 	accountmovement_sender_iban varchar(30) not null,
 	accountmovement_reciever_iban varchar(30) not null,
+	accountmovement_sender_bic varchar(30) not null,
+	accountmovement_reciever_bic varchar(30) not null,
 	accountmovement_amount double not null,
 	accountmovement_date timestamp not null
 );
