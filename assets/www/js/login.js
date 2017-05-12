@@ -2,7 +2,7 @@
 // check input data @ login page
 $(document).ready(function(){
 
-    alert("Test Zugang. email=admin@mail.com, pw=password");
+    alert("Test Zugang. email=1, pw=1");
 
     $("#loginSubmit").click(function(){
         var email    = $("#email").val();
