@@ -2,14 +2,13 @@
 // check input data @ login page
 $(document).ready(function(){
 
-    alert("Test Zugang. email=1, pw=1");
+    alert("Test Zugang. email=admin@mail.com, pw=password");
 
     $("#loginSubmit").click(function(){
         var email    = $("#email").val();
         var password = $("#password").val();
         var pw  = false;
         var eml = false;
-        var user_id = null;
 
         //SQL Query
         MySql.Execute(
@@ -20,15 +19,23 @@ $(document).ready(function(){
             "sql3173783",
             "select * from users",
             function (data) {
-                //check input data is correct
-                data.Result.forEach(function(entry) {
-                    if(entry.user_password === password && entry.user_email === email){
-                        pw = true;
-                        eml = true;
-                        user_id = entry.user_id;
-                    }
-                });
 
+                var tmp = data.Result[0];
+
+                //check input data is correct
+                for (var key in tmp) {
+                    if (tmp.hasOwnProperty(key) ) {
+                        if(password === tmp[key]){
+                            pw = true;
+                        }
+                    }
+
+                    if (tmp.hasOwnProperty(key) ) {
+                        if(email === tmp[key]){
+                            eml = true;
+                        }
+                    }
+                }
             // after success input load profile page
             if(pw === true && eml === true){
                 window.document.location.href = 'html/Profile.html';
@@ -37,7 +44,6 @@ $(document).ready(function(){
                 window.document.location.href = 'index.html';
 
             }
-            localStorage.user = user_id;
         });
 
 
