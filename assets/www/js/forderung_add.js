@@ -4,8 +4,8 @@ $(document).ready(function(){
 	var betrag;
 	var laufzeit;
 	var beschreibung;
-	var zins = 4.5;
-	var userrating = 0;
+	var zins;
+	var userrating;
 
 
     $("#form_add").submit(function(e) {
@@ -33,8 +33,7 @@ $(document).ready(function(){
 			$("#laufzeit_view").val(laufzeit);
 			$("#beschreibung_view").val(beschreibung);
 			$("#rating_view").val(betrag);
-			$("#zins_view").val(zins);
-
+			$("#zins_view").val("4,5%");
 			$("#add_form").hide();
 			$("#add_view").show();
 		}
@@ -47,29 +46,21 @@ $(document).ready(function(){
 		 	laufzeit = $("#laufzeit").val();
 		 	beschreibung = $("#beschreibung").val();
 
-             MySql.Execute(
+            MySql.Execute(
                 "sql3.freemysqlhosting.net",
                 "sql3173783",
                 "NDQRtTqcvt",
                 "sql3173783",
-                "insert into ads values(null, 2,'Traumhaussss3 Finanzieren', 5090000, 01, 1.5, 'Ich möcaahte ein Haus bauen!', 1203, '2016-04-30', 2, null, null)",
+                "insert into ads values(null, 3,'Studium', 5000, 0, 4.5, 'Ich möchte Studieren!', 72, '2017-05-08 13:10:02.047', 0, null, null);",
                 function (data) {
                     for (var key in data) {
                       if (data.hasOwnProperty(key)) {
                         alert(key + " -> " + data[key]);
-                        if(data[key] == true){
-                            alert("Ihre Forderung wurde erfolgreich gespeichert!");
-                        }
-                        else{
-                            alert("nix");
-                        }
                       }
                     }
                 }
-             );
+            );
     });
 
 
 });
-
-//"insert into ads values(null, 1," + titel + ", " + betrag + ", " + userrating + ", " + zins + ", " + beschreibung + ", 12, '2017-01-01', 1, 3, '2017-02-10')",
