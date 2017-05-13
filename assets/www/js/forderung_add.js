@@ -41,25 +41,20 @@ $(document).ready(function(){
 
     $("#save").click(function(){
 
-    		titel = $("#titel").val();
-		 	betrag = $("#betrag").val();
-		 	laufzeit = $("#laufzeit").val();
-		 	beschreibung = $("#beschreibung").val();
+            titel = $("#titels").text();
+            beschreibung = $("#beschreibung").val();
+		 	betrag = parseInt($("#betrag").val());
+		 	laufzeit = parseInt($("#laufzeit").val());
 
             MySql.Execute(
                 "sql3.freemysqlhosting.net",
                 "sql3173783",
                 "NDQRtTqcvt",
                 "sql3173783",
-                "insert into ads values(null, 3,'Studium', 5000, 0, 4.5, 'Ich möchte Studieren!', 72, '2017-05-08 13:10:02.047', 0, null, null);",
-                function (data) {
-                    for (var key in data) {
-                      if (data.hasOwnProperty(key)) {
-                        alert(key + " -> " + data[key]);
-                      }
-                    }
-                }
+                "insert into ads values(null, 3,'" + titel + "', " + betrag + ", 0, 4.5, '" + beschreibung + "', " + laufzeit + ", '2017-05-08 13:10:02.047', 1, null, null);"
             );
+            alert("Ihre Forderung wurde erfolgreich gespeichert!");
+            window.location.replace("forderung_add.html");
     });
 
 

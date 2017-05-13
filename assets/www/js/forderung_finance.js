@@ -39,20 +39,10 @@ $(document).ready(function(){
             "NDQRtTqcvt",
             "sql3173783",
             "update ads set ad_investor_id = 2, ad_investment_date = '', ad_status = 1",
-            function (data) {
-                for (var key in data) {
-                  if (data.hasOwnProperty(key)) {
-                    alert(key + " -> " + data[key]);
-                    if(data[key] == true){
-                        alert("Ihre Forderung wurde erfolgreich gespeichert!");
-                    }
-                    else{
-                        alert("nix");
-                    }
-                  }
-                }
-            }
          );
+
+         //alert("Ihre Forderung wurde erfolgreich gespeichert!");
+         //window.location.replace("forderung_add.html");
 
     });
 });
