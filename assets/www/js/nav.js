@@ -22,6 +22,7 @@ $(document).ready(function(){
         '                     <ul class="dropdown-menu">' +
         '                         <li><a href="forderung_add.html">Erstellen</a></li>' +
         '                         <li><a href="forderung_list_view.html">Liste Anzeigen</a></li>' +
+        '                         <li><a href="extendedSearch.html">Erweiterte Suche</a></li>' +
         '                     </ul>' +
         '                 </li>' +
         '                 <li><a href="HelpNabout.html">&Uuml;ber uns</a></li>' +
