@@ -15,4 +15,4 @@ Gerät(e), auf dem(denen) getestet wurde:
 
 
 Dauer der Entwicklung:
-[50 Stunden]
+[140 Stunden]
