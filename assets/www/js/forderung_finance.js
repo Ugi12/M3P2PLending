@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
     //$("#forderung").hide();
-
+    /*
     $("#show").click(function(){
         
         var titel = $("#titel").val();
@@ -19,6 +19,7 @@ $(document).ready(function(){
         $("#add_form").hide();
         $("#add_view").show();
     });
+    */
 
     $("#back").click(function(){
         //$("#list").show();
@@ -27,24 +28,31 @@ $(document).ready(function(){
 
     $("#finance").click(function(){
 
-        function populateDB(tx){
-            titel = $("#titel").val();
-            betrag = $("#betrag").val();
-            laufzeit = $("#laufzeit").val();
-            beschreibung = $("#beschreibung").val();
+        titel = $("#titel").val();
+        betrag = $("#betrag").val();
+        laufzeit = $("#laufzeit").val();
+        beschreibung = $("#beschreibung").val();
 
-            tx.executeSql('CREATE TABLE IF NOT EXISTS INVESTMENTS (id_forderung, id_user)');
+        MySql.Execute(
+            "sql3.freemysqlhosting.net",
+            "sql3173783",
+            "NDQRtTqcvt",
+            "sql3173783",
+            "update ads set ad_investor_id = 2, ad_investment_date = '', ad_status = 1",
+            function (data) {
+                for (var key in data) {
+                  if (data.hasOwnProperty(key)) {
+                    alert(key + " -> " + data[key]);
+                    if(data[key] == true){
+                        alert("Ihre Forderung wurde erfolgreich gespeichert!");
+                    }
+                    else{
+                        alert("nix");
+                    }
+                  }
+                }
+            }
+         );
 
-            tx.executeSql('INSERT INTO USER (id_forderung, id_user) VALUES ()');
-        }
-
-        function errorCB(err) {
-            alert("Error processing SQL: " + err.code);
-        }
-
-        function successCB() {
-            alert("Ihre Finanzierung wurde erfolgreich durchgeführt.");
-        }
-        
     });
 });
