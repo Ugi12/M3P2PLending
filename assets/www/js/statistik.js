@@ -39,7 +39,7 @@ $(document).ready(function(){
             var gesamt_zukunfts_profit = 0;
             var html_gesmat_text = "";
             data.Result.forEach(function(entry) {
-                console.log(entry);
+                var id = entry.ad_id;
                 var title = entry.ad_title;
                 var amount = entry.ad_amount;
                 var rate = entry.ad_rate;
@@ -62,9 +62,9 @@ $(document).ready(function(){
                     // Abgeschlossene Forderungen
                     if(creator == myID){
                         gesamt_zinskosten += zinskosten;
-                        htmlText = '<div class="panel panel-primary">';
+                        htmlText = '<div class="panel panel-default">';
                         htmlText += '    <div class="panel-heading">';
-                        htmlText += '       <h3 class="panel-title">'+ title +'</h3>';
+                        htmlText += '       <a onclick="viewAd('+ id +')" href="#"><h3 class="panel-title">'+ title +'</h3></a>';
                         htmlText += '    </div>';
                         htmlText += '    <div class="panel-body">';
                         htmlText += '       <label>Status: </label>';
@@ -83,9 +83,9 @@ $(document).ready(function(){
                     // Abgeschlossenes Investment
                     if(investor == myID){
                         gesamt_profit += profit;
-                        htmlText = '<div class="panel panel-primary">';
+                        htmlText = '<div class="panel panel-default">';
                         htmlText += '    <div class="panel-heading">';
-                        htmlText += '       <h3 class="panel-title">'+ title +'</h3>';
+                        htmlText += '       <a onclick="viewAd('+ id +')" href="#"><h3 class="panel-title">'+ title +'</h3></a>';
                         htmlText += '    </div>';
                         htmlText += '    <div class="panel-body">';
                         htmlText += '       <label>Status: </label>';
@@ -112,9 +112,9 @@ $(document).ready(function(){
                     if(creator == myID){
                         gesamt_zinskosten += zinskosten;
                         gesamt_zukunfts_zinskosten += zukunfts_zinskosten;
-                        htmlText = '<div class="panel panel-primary">';
+                        htmlText = '<div class="panel panel-default">';
                         htmlText += '    <div class="panel-heading">';
-                        htmlText += '       <h3 class="panel-title">'+ title +'</h3>';
+                        htmlText += '       <a onclick="viewAd('+ id +')" href="#"><h3 class="panel-title">'+ title +'</h3></a>';
                         htmlText += '    </div>';
                         htmlText += '    <div class="panel-body">';
                         htmlText += '       <label>Status: L&auml;uft noch </label>';
@@ -137,9 +137,9 @@ $(document).ready(function(){
                     if(investor == myID){
                         gesamt_profit += profit;
                         gesamt_zukunfts_profit += zukunfts_profit;
-                        htmlText = '<div class="panel panel-primary">';
+                        htmlText = '<div class="panel panel-default">';
                         htmlText += '    <div class="panel-heading">';
-                        htmlText += '       <h3 class="panel-title">'+ title +'</h3>';
+                        htmlText += '       <a onclick="viewAd('+ id +')" href="#"><h3 class="panel-title">'+ title +'</h3></a>';
                         htmlText += '    </div>';
                         htmlText += '    <div class="panel-body">';
                         htmlText += '       <label>Status: L&auml;uft noch </label>';
@@ -168,7 +168,7 @@ $(document).ready(function(){
             else{fontcolor2 = 'style="color:green;"';}
 
             html_gesmat_text = document.getElementById("gesamt").innerHTML;
-            html_gesmat_text +='                    <div class="panel panel-primary">';
+            html_gesmat_text +='                    <div class="panel panel-default">';
             html_gesmat_text +='                        <div class="panel-heading">';
             html_gesmat_text +='                            <h3 class="panel-title">Aktuelle Bilanz</h3>';
             html_gesmat_text +='                        </div>';
@@ -183,7 +183,7 @@ $(document).ready(function(){
             html_gesmat_text +='                            <label '+ fontcolor +'>'+ Runden2Dezimalstellen(gesamt_profit - gesamt_zinskosten)+' Euro</label>';
             html_gesmat_text +='                        </div>';
             html_gesmat_text +='                    </div>';
-            html_gesmat_text +='                    <div class="panel panel-primary">';
+            html_gesmat_text +='                    <div class="panel panel-default">';
             html_gesmat_text +='                        <div class="panel-heading">';
             html_gesmat_text +='                            <h3 class="panel-title">Zukunfts Bilanz</h3>';
             html_gesmat_text +='                        </div>';
