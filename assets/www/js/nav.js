@@ -20,13 +20,16 @@ $(document).ready(function(){
         '                 <li class="dropdown">' +
         '                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forderung <span class="caret"></span></a>' +
         '                     <ul class="dropdown-menu">' +
-        '                         <li><a href="forderung_add.html">Erstellen</a></li>' +
-        '                         <li><a href="forderung_list_view.html">Liste Anzeigen</a></li>' +
-        '                         <li><a href="extendedSearch.html">Erweiterte Suche</a></li>' +
+        '                         <li><a href="forderung_add.html">Forderung Erstellen</a></li>' +
+        '                         <li><a href="forderung_list_view.html">Forderung Liste</a></li>' +
         '                     </ul>' +
         '                 </li>' +
         '                 <li><a href="HelpNabout.html">&Uuml;ber uns</a></li>' +
         '             </ul>' +
+		'			  <ul class="nav navbar-nav navbar-right">' + 
+                        '<li><a href="register.html">Registrieren</a></li>' +
+                        '<li><a href="../index.html">Logout</a></li>' + 
+                      '</ul>' +
         '         </div><!-- /.navbar-collapse -->' +
         '     </div><!-- /.container-fluid -->' +
         ' </nav>'

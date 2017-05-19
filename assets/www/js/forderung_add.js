@@ -7,7 +7,6 @@ $(document).ready(function(){
 	var zins;
 	var userrating;
 
-
     $("#form_add").submit(function(e) {
         e.preventDefault();
     });

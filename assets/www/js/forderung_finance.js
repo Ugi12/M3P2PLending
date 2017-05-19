@@ -1,48 +1,90 @@
 $(document).ready(function(){
-    
-    //$("#forderung").hide();
-    /*
-    $("#show").click(function(){
-        
-        var titel = $("#titel").val();
-        var betrag = $("#betrag").val();
-        var laufzeit = $("#laufzeit").val();
-        var beschreibung = $("#beschreibung").val();
+	
+	var ford_liste = "";
+	var myID = localStorage.user;
+	
+    $("#forderung_view").hide();
+	   
+	MySql.Execute(
+		"sql3.freemysqlhosting.net",
+		"sql3173783",
+		"NDQRtTqcvt",
+		"sql3173783",
+		"select ad_id, ad_title, ad_amount, ad_runningtime from ads",
+        function(data){
+            data.Result.forEach(function(entry){
+                ford_liste +=       '<div class="panel panel-default" style="margin:10px;">'
+                                +       '<div class="panel-heading">'
+                                +           '<h3 class="panel-title">' + entry.ad_title + '</h3>'
+                                +       '</div>'
+                                +       '<div class="panel-body">'
+                                +           '<label>Betrag: </label>'
+                                +           '<label style="color:green; margin-left:20px;">' + entry.ad_amount + '</label>'
+                                +           '<br>'
+                                +           '<label>Laufzeit: </label>'
+                                +           '<label style="color:red; margin-left:10px;">' + entry.ad_runningtime + '</label>'
+                                +       '</div>'
+                                +       '<button id="' + entry.ad_id + '" class="btn btn-lg btn-primary" style="margin:10px;" type="button">Ansicht</button>'
+                                +   '</div>';
 
-        $("#titels").text(titel);
-        $("#betrag_view").val(betrag);
-        $("#laufzeit_view").val(laufzeit);
-        $("#beschreibung_view").val(beschreibung);
-        $("#rating_view").val(betrag);
-        $("#zins_view").val(betrag);
+            });
+            $("#liste").append(ford_liste);
 
-        $("#add_form").hide();
-        $("#add_view").show();
-    });
-    */
+            $("button").click(function(){
+                var titel = "";
+                var betrag = "";
+                var laufzeit = "";
+                var beschreibung = "";
+                var id = this.id;
+                MySql.Execute(
+                    "sql3.freemysqlhosting.net",
+                    "sql3173783",
+                    "NDQRtTqcvt",
+                    "sql3173783",
+                    "select ad_title, ad_amount, ad_runningtime, ad_rate, ad_description from ads WHERE ad_id = " + id + "",
+                    function (data) {
+                        data.Result.forEach(function(entry) {
+                            titel = entry.ad_title;
+                            betrag = entry.ad_amount;
+                            laufzeit = entry.ad_runningtime;
+                            beschreibung = entry.description;
+                        });
 
-    $("#back").click(function(){
-        //$("#list").show();
-        $("#forderung").hide();
-    });
+                        $("#titels").text(titel);
+                        $("#betrag_view").val(betrag);
+                        $("#laufzeit_view").val(laufzeit);
+                        $("#beschreibung_view").text(beschreibung);
+                        $("#rating_view").val(betrag);
+                        $("#zins_view").val("4,5%");
 
-    $("#finance").click(function(){
 
-        titel = $("#titel").val();
-        betrag = $("#betrag").val();
-        laufzeit = $("#laufzeit").val();
-        beschreibung = $("#beschreibung").val();
+                        $("#forderung_view").show();
+                        $("#forderungen").hide();
 
-        MySql.Execute(
-            "sql3.freemysqlhosting.net",
-            "sql3173783",
-            "NDQRtTqcvt",
-            "sql3173783",
-            "update ads set ad_investor_id = 2, ad_investment_date = '', ad_status = 1",
-         );
+                        $("#back").click(function(){
+                             $("#forderung_view").hide();
+                             $("#forderungen").show();
+                        });
 
-         //alert("Ihre Forderung wurde erfolgreich gespeichert!");
-         //window.location.replace("forderung_add.html");
+                        $("#finance").click(function(){
 
-    });
+                            MySql.Execute(
+                                "sql3.freemysqlhosting.net",
+                                "sql3173783",
+                                "NDQRtTqcvt",
+                                "sql3173783",
+                                "update ads set ad_investor_id = " + myID + ", ad_investment_date = '', ad_status = 1",
+                             );
+                             alert("Ihre Finanzierung wurde erfolgreich durchgeführt!");
+                             $("#forderung_view").hide();
+                             $("#forderungen").show();
+                        });
+                    }
+                );
+
+            });
+
+        }
+    );
+
 });
