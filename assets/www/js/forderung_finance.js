@@ -2,7 +2,15 @@ $(document).ready(function(){
 	
 	var ford_liste = "";
 	var myID = localStorage.user;
-	
+	var d = new Date();
+
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+
+    var date = d.getFullYear() + '/' +
+    (month<10 ? '0' : '') + month + '/' +
+    (day<10 ? '0' : '') + day;
+
     $("#forderung_view").hide();
 	   
 	MySql.Execute(
@@ -10,7 +18,7 @@ $(document).ready(function(){
 		"sql3173783",
 		"NDQRtTqcvt",
 		"sql3173783",
-		"select ad_id, ad_title, ad_amount, ad_runningtime from ads",
+		"select ad_id, ad_title, ad_amount, ad_runningtime from ads where not ad_creator_id = " + myID + " or ad_status = 1",
         function(data){
             data.Result.forEach(function(entry){
                 ford_liste +=       '<div class="panel panel-default" style="margin:10px;">'
@@ -47,7 +55,7 @@ $(document).ready(function(){
                             titel = entry.ad_title;
                             betrag = entry.ad_amount;
                             laufzeit = entry.ad_runningtime;
-                            beschreibung = entry.description;
+                            beschreibung = entry.ad_description;
                         });
 
                         $("#titels").text(titel);
@@ -73,7 +81,7 @@ $(document).ready(function(){
                                 "sql3173783",
                                 "NDQRtTqcvt",
                                 "sql3173783",
-                                "update ads set ad_investor_id = " + myID + ", ad_investment_date = '', ad_status = 1",
+                                "update ads set ad_investor_id = " + myID + ", ad_investment_date = " + date + ", ad_status = 1 where ad_id =  " + id + "",
                              );
                              alert("Ihre Finanzierung wurde erfolgreich durchgeführt!");
                              $("#forderung_view").hide();

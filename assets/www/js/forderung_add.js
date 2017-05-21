@@ -6,6 +6,16 @@ $(document).ready(function(){
 	var beschreibung;
 	var zins;
 	var userrating;
+	var myID = localStorage.user;
+
+	var d = new Date();
+
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+
+	var date = d.getFullYear() + '/' +
+    (month<10 ? '0' : '') + month + '/' +
+    (day<10 ? '0' : '') + day;
 
     $("#form_add").submit(function(e) {
         e.preventDefault();
@@ -50,7 +60,7 @@ $(document).ready(function(){
                 "sql3173783",
                 "NDQRtTqcvt",
                 "sql3173783",
-                "insert into ads values(null, 3,'" + titel + "', " + betrag + ", 0, 4.5, '" + beschreibung + "', " + laufzeit + ", '2017-05-08 13:10:02.047', 1, null, null);"
+                "insert into ads values(null, " + myID + ",'" + titel + "', " + betrag + ", 0, 4.5, '" + beschreibung + "', " + laufzeit + ", " + date + ", 0, null, null);"
             );
             alert("Ihre Forderung wurde erfolgreich gespeichert!");
             window.location.replace("forderung_add.html");
