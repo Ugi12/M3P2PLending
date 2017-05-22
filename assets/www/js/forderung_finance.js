@@ -11,8 +11,6 @@ $(document).ready(function(){
     (month<10 ? '0' : '') + month + '/' +
     (day<10 ? '0' : '') + day;
 
-    alert(date);
-
     $("#forderung_view").hide();
 	   
 	MySql.Execute(
