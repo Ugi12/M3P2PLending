@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../css/Profile.css">
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/mysql.js"></script>
     <script type="text/javascript" src="../js/Profile.js"></script>
     <script type="text/javascript" src="../js/nav.js"></script>
     <title></title>
@@ -42,7 +43,7 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Vorname Nachname</h3>
+                    <h3 class="panel-title" id="user-name">Vorname Nachname</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -50,27 +51,23 @@
                                                                              alt="">
                         <div class=" col-md-9 col-lg-9 ">
                             <table class="table table-user-information">
-                                <tr>
+                                <!-- <tr>
                                     <td>Adresse: </td>
-                                    <td>Lagestrasse 77, 1090 Wien, AT</td>
-                                </tr>
-                                <tr>
+                                    <td id="user-adresse">Lagestrasse 77, 1090 Wien, AT</td>
+                                </tr> -->
+                                <!-- <tr>
                                     <td>Beruf:</td>
-                                    <td>Student</td>
-                                </tr>
+                                    <td id="user-Beruf">Student</td>
+                                </tr> -->
                                 <tr>
                                     <td>Tel: </td>
-                                    <td>0676123456789</td>
+                                    <td id="user-tnummer">0676123456789</td>
                                 </tr>
 
                                 <tr>
                                 <tr>
                                     <td>Email</td>
-                                    <td><a href="mailto:info@support.com">info@support.com</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook: </td>
-                                    <td>Username od Link</td>
+                                    <td id="user-email"><a href="mailto:info@support.com">info@support.com</a></td>
                                 </tr>
                             </table>
 
@@ -78,7 +75,7 @@
                             <table class="table table-user-information">
                             <tr>
                                 <td>Über mich: </td>
-                                <td>Sie brauchen schnelle, kompakte Informationen statt der detaillierten Tests, die dieser Blog publiziert? In diesem Artikel lesen Sie die wichtigsten aktuellen Tipps zum Thema P2P-Kredite. Wenn Sie einen Kredit aufnehmen möchten, haben Sie die Wahl zwischen folgenden Marktplätze für Kredite von Privatpersonen (P2P Kredit FAQ): Giromatch, Auxmoney, Crosslend und Smava.</td>
+                                <td id="user-me-text">Sie brauchen schnelle, kompakte Informationen statt der detaillierten Tests, die dieser Blog publiziert? In diesem Artikel lesen Sie die wichtigsten aktuellen Tipps zum Thema P2P-Kredite. Wenn Sie einen Kredit aufnehmen möchten, haben Sie die Wahl zwischen folgenden Marktplätze für Kredite von Privatpersonen (P2P Kredit FAQ): Giromatch, Auxmoney, Crosslend und Smava.</td>
                             </tr>
                             </table>
                         </div>

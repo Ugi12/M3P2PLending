@@ -31,4 +31,24 @@ $(document).ready(function() {
         e.preventDefault();
         alert("This is a demo.\n :-)");
     });
+
+    MySql.Execute(
+    "sql3.freemysqlhosting.net",
+    "sql3173783",
+    "NDQRtTqcvt",
+    "sql3173783",
+    "select * from users",
+    function (data) {
+        for (var i = 0; i<data.Result.length; i++) {
+            if (data.Result[i].user_id == localStorage.user) {
+                $("#user-name").text("" + data.Result[i].user_firstname + " " + data.Result[i].user_lastname);
+                $("#user-email").text("" + data.Result[i].user_email);
+                $("#user-email").attr("href" ,"mailto:" + data.Result[i].user_email);
+                $("#user-tnummer").text("" + data.Result[i].user_tel);
+                $("#user-me-text").text("" + data.Result[i].user_aboutme);
+                break;
+            }
+        }
+    });
+
 });

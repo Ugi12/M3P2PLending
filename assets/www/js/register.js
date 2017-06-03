@@ -1,7 +1,6 @@
 $(document).ready(function(){
     function checkEmailExist(data, email) {
         console.log(data);
-        var items = data.Result;
         for (var i = 0; i<data.Result.length; i++) {
             if (data.Result[i].user_email === email) {
                 return true;
@@ -61,8 +60,8 @@ $(document).ready(function(){
             function (data) {
                 var exist = checkEmailExist(data, email);
                 if (exist) {
-                    return false;
                     alert("Dieser Benutzer existiert bereits");
+                    return false;
                 }
                 userid = data.Result.length+1;
                 console.log("userid:" + userid);
@@ -83,8 +82,13 @@ $(document).ready(function(){
 
                 console.log("enabled: " + enabled);
                 insert(userid, vorname, nachname, email, password, enabled, telephone, iban, bic);
-                alert("Ihre Registrierung wurde gespeichert");
+
+                createCookie("name", userid, 80);
+                localStorage.user = userid;
+                // alert("Ihre Registrierung wurde gespeichert");
+
                 window.location.replace("Profile.html");
+                console.log("yes");
                 return false;
             });
 
