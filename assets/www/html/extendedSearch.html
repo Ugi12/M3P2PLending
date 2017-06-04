@@ -4,10 +4,12 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/slide.css">
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <!-- <script type="text/javascript" src="../js/login.js"></script> -->
     <script type="text/javascript" src="../js/mysql.js"></script>
+    <script type="text/javascript" src="../js/slideout.min.js"></script>
     <script type="text/javascript" src="../js/nav.js"></script>
     <script src="../js/exSearch.js"></script>
     <title>Erweiterte Suche</title>
@@ -15,6 +17,8 @@
 
 <body>
 <p id="nav"></p>
+<div id="panel">
+    <nav id="navbar"></nav>
     <h1 class="text-center">Erweiterte Suche</h1>
     <form class="container-fluid" onsubmit="return exSearch();">
         <div class="form-group">
@@ -32,4 +36,5 @@
             </div>
         <button type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Suche<button>
     </form>
+    </div>
 </body>
