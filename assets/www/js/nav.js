@@ -16,7 +16,8 @@ $(document).ready(function(){
     '    </section>' +
     '    <section class="menu-section">' +
     '        <ul class="menu-section-list">' +
-    '            <li><a href="HelpNabout.html">&Uuml;ber uns</a></li>' +
+    '            <li><a href="HelpNabout.html">Info</a></li>' +
+    '            <li><a href="About.html">&Uuml;ber uns</a></li>' +
     '            <li><a href="../index.html">Logout</a></li>' +
     '        </ul>' +
     '    </section>' +
@@ -60,18 +61,13 @@ $(document).ready(function(){
         '<nav class="navbar navbar-default">' +
         '    <div class="container-fluid">' +
         '        <div class="navbar-header">' +
-        '            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">' +
+        '            <button type="button" class="navbar-toggle pull-left js-slideout-toggle" style="margin-left:10px;" aria-expanded="false">' +
         '                <span class="sr-only">Toggle navigation</span>' +
         '                <span class="icon-bar"></span>' +
         '                <span class="icon-bar"></span>' +
         '                <span class="icon-bar"></span>' +
         '            </button>' +
-        '            <a class="btn btn-default navbar-btn js-slideout-toggle" style="font-size:1.1em;">&#9776;</a>' +
-        '        </div>' +
-        '        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">' +
-        '            <ul class="nav navbar-nav">' +
-        '                <li><h4 class="navbar-text" style="margin-left:15px;">P2P-Lending</h4></li>' +
-        '            </ul>' +
+        '            <h4 class="navbar-text" style="margin-left:15px;">P2P-Lending</h4>' +
         '        </div><!-- /.navbar-collapse -->' +
         '    </div><!-- /.container-fluid -->' +
         '</nav>'

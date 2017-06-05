@@ -76,6 +76,7 @@
 .account-wall
 {
     margin: 10px;
+    margin-top: 30%;
     padding: 10px;
     background-color: #f7f7f7;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);

@@ -44,8 +44,17 @@ $(document).ready(function() {
                 $("#user-name").text("" + data.Result[i].user_firstname + " " + data.Result[i].user_lastname);
                 $("#user-email").text("" + data.Result[i].user_email);
                 $("#user-email").attr("href" ,"mailto:" + data.Result[i].user_email);
-                $("#user-tnummer").text("" + data.Result[i].user_tel);
-                $("#user-me-text").text("" + data.Result[i].user_aboutme);
+                if (data.Result[i].user_tel && (data.Result[i].user_tel != "null")) {
+                    $("#user-tnummer").text("" + data.Result[i].user_tel);
+                } else {
+                    $("#user-tnummer").text("Keine Angabe");
+                }
+
+                if (data.Result[i].user_aboutme) {
+                    $("#user-me-text").text("" + data.Result[i].user_aboutme);
+                } else {
+                    $("#user-me-text").text("Keine Angabe");
+                }
                 break;
             }
         }
